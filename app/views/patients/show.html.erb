@@ -1,0 +1,160 @@
+<% if user_signed_in? %>
+
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @patient.firstName %>
+</p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @patient.surName %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @patient.dob %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @patient.gender %>
+</p>
+
+<p>
+  <strong>Hospital:</strong>
+  <%= @patient.hospital %>
+</p>
+
+<p>
+  <strong>Opdate:</strong>
+  <%= @patient.opDate %>
+</p>
+
+<p>
+  <strong>Q1:</strong>
+  <%= @patient.q1 %>
+</p>
+
+<p>
+  <strong>Q2:</strong>
+  <%= @patient.q2 %>
+</p>
+
+<p>
+  <strong>Q3:</strong>
+  <%= @patient.q3 %>
+</p>
+
+<p>
+  <strong>Q4:</strong>
+  <%= @patient.q4 %>
+</p>
+
+<p>
+  <strong>Q5:</strong>
+  <%= @patient.q5 %>
+</p>
+
+<p>
+  <strong>Q6:</strong>
+  <%= @patient.q6 %>
+</p>
+
+<p>
+  <strong>Q7:</strong>
+  <%= @patient.q7 %>
+</p>
+
+<p>
+  <strong>Q8:</strong>
+  <%= @patient.q8 %>
+</p>
+
+<p>
+  <strong>Q9:</strong>
+  <%= @patient.q9 %>
+</p>
+
+<p>
+  <strong>Q10:</strong>
+  <%= @patient.q10 %>
+</p>
+
+<p>
+  <strong>Q11:</strong>
+  <%= @patient.q11 %>
+</p>
+
+<p>
+  <strong>Q12:</strong>
+  <%= @patient.q12 %>
+</p>
+
+<p>
+  <strong>Q13:</strong>
+  <%= @patient.q13 %>
+</p>
+
+<p>
+  <strong>Q14:</strong>
+  <%= @patient.q14 %>
+</p>
+
+<p>
+  <strong>Q15:</strong>
+  <%= @patient.q15 %>
+</p>
+
+<p>
+  <strong>Q16:</strong>
+  <%= @patient.q16 %>
+</p>
+
+<p>
+  <strong>Q17:</strong>
+  <%= @patient.q17 %>
+</p>
+
+<p>
+  <strong>Q18:</strong>
+  <%= @patient.q18 %>
+</p>
+
+<p>
+  <strong>Q19:</strong>
+  <%= @patient.q19 %>
+</p>
+
+<p>
+  <strong>Q20:</strong>
+  <%= @patient.q20 %>
+</p>
+
+<p>
+  <strong>Q21:</strong>
+  <%= @patient.q21 %>
+</p>
+
+<p>
+  <strong>Q22:</strong>
+  <%= @patient.q22 %>
+</p>
+
+<p>
+  <strong>ASA:</strong>
+  <%= @patient.asa %>
+</p>
+
+<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<%= link_to 'Back', patients_path %>
+
+<% else %>
+<br><br><br>
+<div class="well">
+  <h2>Thank you for completing your assessment! </h2>
+  <br><br>
+  <p>The results will be made availble for you anaesthesist and surgeon to view prior to your opperation.</p>
+  <br><br>
+<div>
+<% end %>

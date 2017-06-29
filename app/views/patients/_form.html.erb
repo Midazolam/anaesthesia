@@ -1,0 +1,195 @@
+<%= form_with(model: patient, local: true) do |form| %>
+  <% if patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+      <% patient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :"First Name" %><br>
+    <%= form.text_field :firstName, class: "form-control", id: :patient_firstName %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Surname" %><br>
+    <%= form.text_field :surName, class: "form-control", id: :patient_surName %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Date of Birth" %>&nbsp &nbsp 
+    <%= form.date_select :dob, :start_year=>1900,:end_year=>2030, id: :patient_dob %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Gender" %>&nbsp &nbsp 
+    <%= form.select :gender, ["","male", "female"], id: :patient_gender %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Which hospital are you having the opperation in?" %>&nbsp &nbsp 
+    <%= form.select :hospital, ["","Beaumont", "Connelly", "St. Josephs", "Naas", "Limerick"], id: :patient_hospital %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"What date are you having the opperation on?" %>&nbsp &nbsp 
+    <%= form.date_select :opDate, :start_year=>2017,:end_year=>2027, id: :patient_opDate %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"How would you rate your overall health" %><br>
+    <%= form.select :q1, ["","No abnormalities", "Better than expected", "Worse  than expected", "Dementia", "Sick", "Moribund"], id: :patient_q1 %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"How is your physical condition in general?" %><br>
+    <%= form.select :q2, ["","I can do everything I want", "Slightly impaired, but I feel no impairments in daily activities", "Impaired, I can only take care of domestic chores", "I am completely dependent on help from others"],  id: :patient_q2 %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Do you have a heart condition that impedes your physical efforts (as a result of tiredness, pain or shortness of breath)?" %><br>
+    <%= form.select :q3, ["","No", "Yes, only during heavy labour", "Yes, during climbing the stairs, in the wind, stress", "Yes, daily, not at rest", "Yes, at rest and increased during any activity"], id: :patient_q3 %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Have you ever experienced any feeling of pain or tightness in the chest?" %><br>
+    <%= form.select :q4, ["","No", "Yes, only during heavy labour", "Yes, during climbing the stairs, in the wind, stress", "Yes, daily, not at rest", "Yes, at rest and increased during any activity"], id: :patient_q4 %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Have you ever had a heart attack?" %><br>
+    <%= form.select :q5, ["","No", "Yes, > 12 months ago", "Yes, > 6 and < 12 months ago", "Yes, > 3 and < 6 months ago", "Yes, < 3 months ago"], id: :patient_q5 %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Have you ever had a cardiac arrest?" %><br>
+    <%= form.select :q6, ["","No", "Yes, > 12 months ago", "Yes, > 6 and < 12 months ago", "Yes, > 3 and < 6 months ago", "Yes, < 3 months ago"], id: :patient_q6 %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Have you ever undergone any cardiac surgery or heart catheterization?" %><br>
+    <%= form.select :q7, ["","No", "Yes, > 6 months ago", "Yes, > 3 and < 6 months ago", "Yes, > 6 weeks and < 3 months ago", "Yes, < 6 weeks ago"], id: :patient_q7 %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Do you ever get palpitations?" %><br>
+    <%= form.select :q8, ["","No", "Yes, I have no treatment", "Yes, I am treated with medication"], id: :patient_q8 %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Have you been told you have a heart murmur?" %><br>
+    <%= form.select :q9, ["","No", "Yes, but no operation", "Yes, I have had an operation"], id: :patient_q9 %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Do you have high blood pressure?" %><br>
+    <%= form.select :q10, ["","No", "I don't know", "Yes"], id: :patient_q10 %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Do you have high cholesterol?" %><br>
+    <%= form.select :q11, ["","No", "Yes"], id: :patient_q11 %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Do you receive treatment for diabetes (high blood sugar level)?" %><br>
+    <%= form.select :q12, ["","No", "Yes, treatment with diet", "Yes, treatment with oral medication", "Yes, treatment with insulin"], id: :patient_q12 %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Have you ever had a stroke?" %><br>
+    <%= form.select :q13, ["","No", "Yes, but complete recovery", "Yes, with physical impairment/ disability", "Yes, < 2 months ago"], id: :patient_q13 %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Do you receive treatment for asthma?" %><br>
+    <%= form.select :q14, ["","No", "Yes, sometimes", "Yes, often", "Yes, daily", "Yes, daily and increased over the last six months"], id: :patient_q14 %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Do you receive treatment for pulmonary emphysema, chronic obstructive pulmonary disease (COPD) or chronic bronchitis?" %><br>
+    <%= form.select :q15, ["","No", "Yes, only during heavy labour", "Yes, always during climbing the stairs, in the wind, stress", "Yes, always even at rest, I need oxygen therapy"], id: :patient_q15 %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Do you have Sleep Apnoea?" %><br>
+    <%= form.select :q16, ["","No", "Yes"], id: :patient_q16 %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Do you have any renal problems or kidney impairment?" %><br>
+    <%= form.select :q17, ["","No", "Yes, but with complete recovery", "Yes, treatment with fluid restriction only", "Yes, treatment with dialysis", "Yes, other serious kidney condition (e.g. kidney resection)"], id: :patient_q17 %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Have you ever had jaundice or any liver problems?" %><br>
+    <%= form.select :q18, ["","No", "Yes, but with complete recovery", "Yes, liver cirrhosis has been diagnosed", "Yes, other serious liver condition (e.g. partial resection)"], id: :patient_q18 %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Have you ever unintentionally lost more than 10 kg in a short period of time?" %><br>
+    <%= form.select :q19, ["","No", "Yes", "Yes, more than 25% of previous bodyweight"], id: :patient_q19 %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Do you smoke?" %><br>
+    <%= form.select :q20, ["","No", "Yes"], id: :patient_q20 %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Do you consume alcohol?" %><br>
+    <%= form.select :q21, ["","No", "Yes, < 3 Units/day", "Yes, > 3 and < 6 Units/day", "Yes, > 6 Units/day"], id: :patient_q21 %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.label :"Do you ever take illicit drugs (Cocaine, Heroin, Ecstasy)?" %><br>
+    <%= form.select :q22, ["","No", "No, not anymore", "Yes, every once in a while", "Yes, more the once a week"], id: :patient_q22 %>
+  </div>
+  <hr>
+
+
+
+
+
+  <div class="form-group">
+    <%= form.label :"ASA grade" %><br>
+    <%= form.select :asa, ["","1", "2", "3", "4", "5"], id: :patient_asa %>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <%= form.submit "Submit for Assessment", class: "btn btn-primary" %>
+  </div>
+<% end %>
