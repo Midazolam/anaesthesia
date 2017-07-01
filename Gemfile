@@ -5,8 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'devise', '~> 4.2'
-require 'devise'
 gem 'rails', '~> 5.1.1'
 gem 'puma', '~> 3.7'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
@@ -17,6 +15,8 @@ gem 'turbolinks', '~> 5'
 gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
+gem 'devise', git: 'https://github.com/gogovan/devise.git', branch: 'rails-5.1'
+
 
 #development enviroment gems
 group :development, :test do
