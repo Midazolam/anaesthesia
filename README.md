@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+APAT development repository
 
-Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.4.0
 
-* System dependencies
+* To run the project locally
+    cd anaesthesia
+    rvm use 2.4.0
+    rails s
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
