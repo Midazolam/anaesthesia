@@ -1,6 +1,18 @@
 
 <% if user_signed_in? %>
 <h1>Patients</h1>
+
+<%= form_tag patients_path, :method => 'get' do %>
+<%= text_field_tag :searchFirst, params[:searchFirst], placeholder: 'First Name' %>
+<%= text_field_tag :searchSur, params[:searchSur], placeholder: 'Surname' %>
+<%= text_field_tag :dob, params[:dob], placeholder: 'D.O.B' %>
+<%= text_field_tag :searchHos, params[:searchHos], placeholder: 'Hospital' %>
+<%= text_field_tag :SearchOpDate, params[:SearchOpDate], placeholder: 'Date' %>
+
+<%= submit_tag "Search" %>
+<% end %>
+
+
 <div class="table-responsive">
 <table class="table sortable">
   <thead>
