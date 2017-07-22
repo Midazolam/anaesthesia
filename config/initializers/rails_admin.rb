@@ -4,7 +4,7 @@ RailsAdmin.config do |config|
 
   ## == Devise ==
   config.authenticate_with do
-    redirect_to main_app.root_path unless warden.user.email == 'admin@preoperative.net'
+      redirect_to main_app.root_path unless warden.user.email == 'admin@preoperative.net'
   end
   #   warden.authenticate! scope: :user
   # end

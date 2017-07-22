@@ -4,7 +4,7 @@ class PatientsController < ApplicationController
   # GET /patients
   # GET /patients.json
   def index
-    @patients = Patient.where(["firstName LIKE ? AND surName LIKE ? AND dob LIKE ? AND hospital LIKE ? AND opDate LIKE?","%#{params[:searchFirst]}%","%#{params[:searchSur]}%","%#{params[:dob]}%","%#{params[:searchHos]}%","%#{params[:searchOpDate]}%"])
+    @patients = Patient.where(["firstName LIKE ? AND surName LIKE ? AND dob LIKE ? AND hospital LIKE ? AND opDate LIKE ?","%#{params[:searchFirst]}%","%#{params[:searchSur]}%","%#{params[:dob]}%","%#{params[:searchHos]}%","%#{params[:searchOpDate]}%"])
   end
 
   # GET /patients/1
