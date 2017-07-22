@@ -16,6 +16,8 @@ gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 gem 'devise', git: 'https://github.com/gogovan/devise.git', branch: 'rails-5.1'
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
 
 
 #development enviroment gems

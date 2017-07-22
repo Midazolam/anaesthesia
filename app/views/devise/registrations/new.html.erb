@@ -35,3 +35,18 @@
     </div>
   </div>
 </div>
+  <div class="jumbotron">
+    <h2>Patient Assessment</h2>
+    <p>APAT, or Anaesthetic Preoperative Assessment is a quick and easy online assessment tool that allows us to get to know a little bit about our patients before they come in for surgery in Irish hospitals.
+    If you have been asked to complete an assessment by a surgeon, simply click the button below and answer our questions.</p>
+    <p>
+      <%= button_to "Start Your Assessment »", new_patient_path, class: "btn btn-primary btn-lg", method: :get %>
+    </p>
+  </div>
+
+  <div class="jumbotron">
+    <h2>Doctors</h2>
+    <p>Anaesthetists and Surgeons who have registered to use APAT can sign in to view assessments.</p>
+     <%= button_to "Doctors Sign In »", new_user_session_path, class: "btn btn-info btn-lg", method: :get %>
+    </p>
+  </div>
