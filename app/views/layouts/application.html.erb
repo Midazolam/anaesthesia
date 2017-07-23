@@ -10,7 +10,7 @@
 
   </head>
 
-  <body>
+  <body class = bgimg>
     <header class="navbar navbar-default" role="navigation">
       <div class="navbar-inner">
         <div id="logo" class="navbar-brand"><%= link_to "Anaesthesia Pre-Operative Assessment", root_path %></div>
@@ -40,5 +40,14 @@
 
         <%= yield %>
     </div>
+
+    <style type="text/css">
+    .bgimg {
+      background-image: url('http://www.binayakhealthworld.com/wp-content/uploads/2016/09/NB-Background2.jpg');
+      background-size:     cover;                     
+      background-repeat:   no-repeat;
+    }
+  </style>
+  
   </body>
 </html>

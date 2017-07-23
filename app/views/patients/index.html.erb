@@ -51,7 +51,25 @@
 
 <%= link_to 'New Patient', new_patient_path %>
 
+
+
+<style type="text/css">
+    .bgimg {
+      background-image: url('http://www.binayakhealthworld.com/wp-content/uploads/2016/09/NB-Background2.jpg');
+      background-size:     cover;                     
+      background-repeat:   no-repeat;
+    }
+  </style>
+
 <% else %>
+  <style type="text/css">
+    .bgimg {
+      background-image: url('http://www.binayakhealthworld.com/wp-content/uploads/2016/09/NB-Background2.jpg');
+      background-size:     cover;                     
+      background-repeat:   no-repeat;
+      background-position: center center; 
+    }
+  </style>
 
   <div class="jumbotron">
     <h2>Patient Assessment</h2>
