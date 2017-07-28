@@ -7,6 +7,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ginokenny.files.wordpress.com/2017/05/hse.jpeg" />
 
   </head>
 
@@ -17,13 +18,18 @@
         <nav class="collapse navbar-collapse navbar-ex1-collapse">
           <% if user_signed_in? %>
             <ul class="nav navbar-nav navbar-right">
-              <li><%= link_to 'Manage Account', edit_user_registration_path %></li>
+              <li><%= link_to 'Manage Account', edit_user_registration_path%></li>
+              <li>&nbsp;</li>
               <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
+              <li>&nbsp;</li>
+              <li>&nbsp;</li>
             </ul>
           <% else %>
             <ul class="nav navbar-nav navbar-right">
              <!-- <li><%= link_to 'Create Account', new_user_registration_path %></li> -->
               <li><%= link_to 'Sign In', new_user_session_path %></li>
+              <li>&nbsp;</li>
+              <li>&nbsp;</li>
             </ul>
           <% end %>
         </nav>

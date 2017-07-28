@@ -1,7 +1,10 @@
 
 <% if user_signed_in? %>
-<h1>Patients</h1>
-
+<div class = "panel panel-default">
+  <div class ="panel-heading">
+  <h1>Patient Assessments</h1>
+</div>
+<div class ="panel-body">
 <br><hr>
 <%= form_tag patients_path, :method => 'get' do %>
 <%= text_field_tag :searchFirst, params[:searchFirst], placeholder: 'First Name' %>&emsp;&emsp;&emsp;&emsp;
@@ -10,10 +13,11 @@
 <%= text_field_tag :searchHos, params[:searchHos], placeholder: 'Hospital' %>&emsp;&emsp;&emsp;&emsp;
 <%= text_field_tag :SearchOpDate, params[:SearchOpDate], placeholder: 'Date of Surgery' %>&emsp;&emsp;&emsp;&emsp;
 
-<%= submit_tag "Search" %>
+<%= submit_tag "Search", class: "btn-sm btn-group btn-primary "%>
 <% end %>
 
 <hr>
+<p><i>Tip: Use the search bar above to filter patient records, or click on a table header to sort the patient records</i></p>
 <div class="table-responsive">
 <table class="table sortable">
   <thead>
@@ -36,11 +40,13 @@
         <td><%= patient.dob %></td>
         <td><%= patient.hospital %></td>
         <td><%= patient.opDate %></td>
-        <td><%= patient.asa %></td>
-
-        <td><%= link_to 'Details', patient %></td>
-        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
-        <td><%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><strong><%= patient.asa %></strong></td>
+        <td>
+        <%= link_to 'Details', patient, class: "btn-sm btn-group btn-primary " %>
+        <%= link_to 'Edit', edit_patient_path(patient), class: "btn-sm btn-group btn-success " %>
+        <%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-sm btn-group btn-danger " %>
+      </td>
+        
       </tr>
     <% end %>
   </tbody>
@@ -49,41 +55,31 @@
 
 <br>
 
-<%= link_to 'New Patient', new_patient_path %>
+<%= link_to 'New Patient', new_patient_path, class: "btn  btn-primary " %>
+</div>
+</div>
 
-
-
-<style type="text/css">
-    .bgimg {
-      background-image: url('http://www.binayakhealthworld.com/wp-content/uploads/2016/09/NB-Background2.jpg');
-      background-size:     cover;                     
-      background-repeat:   no-repeat;
-    }
-  </style>
 
 <% else %>
-  <style type="text/css">
-    .bgimg {
-      background-image: url('http://www.binayakhealthworld.com/wp-content/uploads/2016/09/NB-Background2.jpg');
-      background-size:     cover;                     
-      background-repeat:   no-repeat;
-      background-position: center center; 
-    }
-  </style>
-
+  <div class="col-lg-6">
   <div class="jumbotron">
-    <h2>Patient Assessment</h2>
+    <h1>Patients</h2>
+    <hr>
     <p>APAT, or Anaesthetic Preoperative Assessment is a quick and easy online assessment tool that allows us to get to know a little bit about our patients before they come in for surgery in Irish hospitals.
     If you have been asked to complete an assessment by a surgeon, simply click the button below and answer our questions.</p>
     <p>
       <%= button_to "Start Your Assessment »", new_patient_path, class: "btn btn-primary btn-lg", method: :get %>
     </p>
   </div>
+</div>
+    <div class="col-lg-6">
 
   <div class="jumbotron">
-    <h2>Doctors</h2>
+    <h1>Doctors</h2>
+    <hr>
     <p>Anaesthetists and Surgeons who have registered to use APAT can sign in to view assessments.</p>
      <%= button_to "Doctors Sign In »", new_user_session_path, class: "btn btn-info btn-lg", method: :get %>
     </p>
   </div>
+</div>
 <%end%>

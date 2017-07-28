@@ -1,5 +1,12 @@
 <% if user_signed_in? %>
-
+<div id="page-wrapper">
+  <div class="col-lg-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2>Patient: <%= @patient.firstName %> <%= @patient.surName %></h2>
+      </div>
+      <div class="panel-body">
+        <div class="col-lg-6">
 
 <p>
   <strong>Firstname:</strong>
@@ -140,14 +147,24 @@
   <strong>Q22:</strong>
   <%= @patient.q22 %>
 </p>
+</div>
+<div class="col-lg-3">
+<div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>
+        <strong>ASA Grade:</strong>
+        <%= @patient.asa %>
+        </h3>
+      </div>
+      <div class="panel-heading">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <%= link_to 'Edit', edit_patient_path(@patient), class: "btn  btn-primary " %> &nbsp;&nbsp;&nbsp;&nbsp;
+        <%= link_to 'Back', patients_path, class: "btn  btn-primary" %>
+      </div>
 
-<p>
-  <strong>ASA:</strong>
-  <%= @patient.asa %>
-</p>
 
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %>
+
+</div>
 
 <% else %>
 <br><br><br>
