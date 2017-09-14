@@ -34,7 +34,21 @@
   </thead>
 
   <tbody>
-    
+    <% @patients.each do |patient| %>
+      <tr>
+        <td><%= patient.firstName %></td>
+        <td><%= patient.Surname %></td>
+        <td><%= patient.dob %></td>
+        <td><%= patient.hospital %></td>
+        <td><%= patient.opDate %></td>
+        <td><strong><%= patient.asa %></strong></td>
+        <td>
+        <%= link_to 'Details', patient, class: "btn-sm btn-group btn-primary " %>
+        <%= link_to 'Edit', edit_patient_path(patient), class: "btn-sm btn-group btn-success " %>
+        <%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-sm btn-group btn-danger " %>
+      </td>
+        
+      </tr>
     <% end %>
   </tbody>
 </table>
