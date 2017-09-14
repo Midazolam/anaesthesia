@@ -5,15 +5,7 @@
   <h1>Patient Assessments</h1>
 </div>
 <div class ="panel-body">
-<br><hr>
-<%= form_tag patients_path, :method => 'get' do %>
-<%= text_field_tag :searchFirst, params[:searchFirst], placeholder: 'First Name' %>&emsp;&emsp;&emsp;&emsp;
-<%= text_field_tag :searchSur, params[:searchSur], placeholder: 'Surname' %>&emsp;&emsp;&emsp;&emsp;
-<%= text_field_tag :dob, params[:dob], placeholder: 'Date Of Brith' %>&emsp;&emsp;&emsp;&emsp;
-<%= text_field_tag :searchHos, params[:searchHos], placeholder: 'Hospital' %>&emsp;&emsp;&emsp;&emsp;
-<%= text_field_tag :SearchOpDate, params[:SearchOpDate], placeholder: 'Date of Surgery' %>&emsp;&emsp;&emsp;&emsp;
 
-<%= submit_tag "Search", class: "btn-sm btn-group btn-primary "%>
 <% end %>
 
 <hr>
