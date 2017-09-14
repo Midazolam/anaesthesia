@@ -6,7 +6,16 @@
 </div>
 <div class ="panel-body">
 
+<br><hr>
+<%= form_tag patients_path, :method => 'get' do %>
+<%= text_field_tag :searchFirst, params[:searchFirst], placeholder: 'First Name' %>&emsp;&emsp;&emsp;&emsp;
+<%= text_field_tag :searchSur, params[:searchSur], placeholder: 'Surname' %>&emsp;&emsp;&emsp;&emsp;
+<%= text_field_tag :dob, params[:dob], placeholder: 'Date Of Brith' %>&emsp;&emsp;&emsp;&emsp;
+<%= text_field_tag :searchHos, params[:searchHos], placeholder: 'Hospital' %>&emsp;&emsp;&emsp;&emsp;
+<%= text_field_tag :SearchOpDate, params[:SearchOpDate], placeholder: 'Date of Surgery' %>&emsp;&emsp;&emsp;&emsp;
 
+<%= submit_tag "Search", class: "btn-sm btn-group btn-primary "%>
+<% end %>
 
 <hr>
 <p><i>Tip: Use the search bar above to filter patient records, or click on a table header to sort the patient records</i></p>
@@ -25,21 +34,7 @@
   </thead>
 
   <tbody>
-    <% @patients.each do |patient| %>
-      <tr>
-        <td><%= patient.firstName %></td>
-        <td><%= patient.Surname %></td>
-        <td><%= patient.dob %></td>
-        <td><%= patient.hospital %></td>
-        <td><%= patient.opDate %></td>
-        <td><strong><%= patient.asa %></strong></td>
-        <td>
-        <%= link_to 'Details', patient, class: "btn-sm btn-group btn-primary " %>
-        <%= link_to 'Edit', edit_patient_path(patient), class: "btn-sm btn-group btn-success " %>
-        <%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-sm btn-group btn-danger " %>
-      </td>
-        
-      </tr>
+    
     <% end %>
   </tbody>
 </table>
