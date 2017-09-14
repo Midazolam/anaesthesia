@@ -35,11 +35,11 @@
   <tbody>
     <% @patients.each do |patient| %>
       <tr>
-        <td><%= patient.firstName %></td>
-        <td><%= patient.surName %></td>
+        <td><%= patient.firstname %></td>
+        <td><%= patient.surname %></td>
         <td><%= patient.dob %></td>
         <td><%= patient.hospital %></td>
-        <td><%= patient.opDate %></td>
+        <td><%= patient.opdate %></td>
         <td><strong><%= patient.asa %></strong></td>
         <td>
         <%= link_to 'Details', patient, class: "btn-sm btn-group btn-primary " %>
