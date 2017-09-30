@@ -3,7 +3,7 @@ RailsAdmin.config do |config|
 
   ## == Authenticate admin user, everyone else gets redirected ==
   config.authenticate_with do
-      redirect_to main_app.root_path unless warden.user.email == 'admin@preoperative.net'
+      redirect_to main_app.root_path unless warden.user.email == 'johnoshea@rcsi.ie'
   end
 
 
