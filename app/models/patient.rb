@@ -8,27 +8,27 @@ class Patient < ApplicationRecord
   	#initialise the risk score as 0
   	risk = 0
   	#Q1
-  	if self.q1 == "No abnormalities" 
+  	if self.q1 == "Very good" 
   		risk = risk
   	end
 
-  	if self.q1 == "Better than expected" 
+  	if self.q1 == "No abnormalities" 
   		risk = risk -2
   	end
 
-  	if self.q1 == "Worse  than expected" 
+  	if self.q1 == "Not good" 
   		risk = risk +2
   	end
 
-  	if self.q1 == "Dementia" 
+  	if self.q1 == "I am diagnosed with dementia" 
   		risk = risk + 2
   	end
 
-  	if self.q1 == "Sick" 
+  	if self.q1 == "Very sick" 
   		risk = risk +2
   	end
 
-  	if self.q1 == "Moribund" 
+  	if self.q1 == "Bedbound at all times" 
   		risk = risk +24
   	end
   	#Q2
@@ -92,19 +92,19 @@ class Patient < ApplicationRecord
   		risk = risk
   	end
 
-  	if self.q5 == "Yes, > 12 months ago" 
+  	if self.q5 == "Yes, longer than 12 months ago" 
   		risk = risk+2
   	end
 
-  	if self.q5 == "Yes, >6 and < 12 months ago" 
+  	if self.q5 == "Yes, longer than 6 months ago" 
   		risk = risk +3
   	end
 
-  	if self.q5 == "Yes, >3 and < 6 months ago" 
+  	if self.q5 == "Yes, longer than 3 months ago" 
   		risk = risk +4
   	end
 
-  	if self.q5 == "Yes, < 3 months ago" 
+  	if self.q5 == "Yes, in the last 3 months" 
   		risk = risk +6
   	end
   	#Q6 Arrest
@@ -112,19 +112,19 @@ class Patient < ApplicationRecord
   		risk = risk
   	end
 
-  	if self.q6 == "Yes, > 12 months ago" 
+  	if self.q6 == "Yes, longer than 12 months ago" 
   		risk = risk+1
   	end
 
-  	if self.q6 == "Yes, >6 and < 12 months ago" 
+  	if self.q6 == "Yes, longer than 6 months ago" 
   		risk = risk +3
   	end
 
-  	if self.q6 == "Yes, >3 and < 6 months ago" 
+  	if self.q6 == "Yes, longer than 3 months ago" 
   		risk = risk +4
   	end
 
-  	if self.q6 == "Yes, < 3 months ago" 
+  	if self.q6 == "Yes, in the last 3 months" 
   		risk = risk +6
   	end
   	#Q7 Cathlab
@@ -132,19 +132,19 @@ class Patient < ApplicationRecord
   		risk = risk
   	end
 
-  	if self.q7 == "Yes, > 6 months ago" 
+  	if self.q7 == "Yes, longer than 6 months ago" 
   		risk = risk+1
   	end
 
-  	if self.q7 == "Yes, >3 and < 6 months ago" 
+  	if self.q7 == "Yes, longer than 3 months ago" 
   		risk = risk +3
   	end
 
-  	if self.q7 == "Yes, >3 and < 6 weeks ago" 
+  	if self.q7 == "Yes, longer than 3 weeks ago" 
   		risk = risk +4
   	end
 
-  	if self.q7 == "Yes, < 6 weeks ago" 
+  	if self.q7 == "Yes, in the last 3 weeks" 
   		risk = risk +6
   	end
   	#Q8 Palps
@@ -152,11 +152,11 @@ class Patient < ApplicationRecord
   		risk = risk
   	end
 
-  	if self.q8 == "Yes, I have no treatment" 
+  	if self.q8 == "Yes, and I do not take treatment for it" 
   		risk = risk+1
   	end
 
-  	if self.q8 == "Yes, I am treated with medication" 
+  	if self.q8 == "Yes, and I take treatment for it" 
   		risk = risk +2
   	end
     #Q9 Murmur
@@ -164,11 +164,11 @@ class Patient < ApplicationRecord
       risk = risk
     end
 
-    if self.q9 == "Yes, but no operation" 
+    if self.q9 == "Yes" 
       risk = risk+2
     end
 
-    if self.q9 == "Yes, I have had an operation" 
+    if self.q9 == "Yes, and I've had a procedure to fix it" 
       risk = risk +2
     end
     #Q10 Htn
@@ -180,7 +180,7 @@ class Patient < ApplicationRecord
       risk = risk
     end
 
-    if self.q10 == "Yes" 
+    if self.q10 == "Yes/it's controlled on tablets" 
       risk = risk +2
     end
     #Q11 Cholesterol
@@ -188,7 +188,7 @@ class Patient < ApplicationRecord
       risk = risk
     end
 
-    if self.q11 == "Yes" 
+    if self.q11 == "Yes/it's controlled on tablets" 
       risk = risk+2
     end
     #Q12 Diabetes
@@ -212,15 +212,15 @@ class Patient < ApplicationRecord
       risk = risk
     end
 
-    if self.q13 == "Yes, but complete recovery" 
+    if self.q13 == "Yes, but I've completely recovered" 
       risk = risk
     end
 
-    if self.q13 == "Yes, with physical impairment/ disability" 
+    if self.q13 == "Yes, and I have not fully recovered" 
       risk = risk +2
     end
 
-    if self.q13 == "Yes, < 2 months ago" 
+    if self.q13 == "Yes, in the last two months" 
       risk = risk +4
     end
     #Q14 Asthma
@@ -228,19 +228,19 @@ class Patient < ApplicationRecord
       risk = risk
     end
 
-    if self.q14 == "Yes, sometimes" 
+    if self.q14 == "Yes, but I rarely need my inhailer" 
       risk = risk
     end
 
-    if self.q14 == "Yes, often" 
+    if self.q14 == "Yes, I need my inhaler about once a week" 
       risk = risk +1
     end
 
-    if self.q14 == "Yes, daily" 
+    if self.q14 == "Yes, I need my inhaler every day" 
       risk = risk +3
     end
 
-    if self.q14 == "Yes, daily and increased over the last six months" 
+    if self.q14 == "Yes, I need my inhaler every day and it's been getting worse over the past 6 months" 
       risk = risk +4
     end
     #Q15 COPD
@@ -248,15 +248,15 @@ class Patient < ApplicationRecord
       risk = risk
     end
 
-    if self.q15 == "Yes, only during heavy labour" 
+    if self.q15 == "Yes, it affects me during heavy exercise" 
       risk = risk+1
     end
 
-    if self.q15 == "Yes, always during climbing the stairs, in the wind, stress" 
+    if self.q15 == "Yes, it affects me when climbing the stairs, in the wind, during stress" 
       risk = risk +4
     end
 
-    if self.q15 == "Yes, always even at rest, I need oxygen therapy" 
+    if self.q15 == "Yes, I'm breathless at rest or I need oxygen therapy at home" 
       risk = risk+8
     end
     #Q16 OSA
@@ -272,19 +272,19 @@ class Patient < ApplicationRecord
       risk = risk
     end
 
-    if self.q17 == "Yes, but with complete recovery" 
+    if self.q17 == "Yes, I had a problem before but it has completely resolved (acute injury)" 
       risk = risk
     end
 
-    if self.q17 == "Yes, treatment with fluid restriction only" 
+    if self.q17 == "Yes, my doctor has told me I must limit how much fluid I drink each day" 
       risk = risk+3
     end
 
-    if self.q17 == "Yes, treatment with dialysis" 
+    if self.q17 == "Yes, I am getting dialysis" 
       risk = risk+6
     end
 
-    if self.q17 == "Yes, other serious kidney condition (e.g. kidney resection)" 
+    if self.q17 == "Yes, I have had a kidney transplant or kidney opperation" 
       risk = risk+2
     end
     #Q18 Liver
@@ -300,7 +300,7 @@ class Patient < ApplicationRecord
       risk = risk+4
     end
 
-    if self.q18 == "Yes, other serious liver condition (e.g. partial resection)" 
+    if self.q18 == "Yes, I've had a procedure done on my liver" 
       risk = risk+1
     end
     #Q19 Weight Loss
@@ -319,6 +319,10 @@ class Patient < ApplicationRecord
     if self.q20 == "No" 
       risk = risk
     end
+    
+    if self.q20 == "I've quit in the last five years" 
+      risk = risk+3
+    end
 
     if self.q20 == "Yes" 
       risk = risk+4
@@ -328,15 +332,15 @@ class Patient < ApplicationRecord
       risk = risk
     end
 
-    if self.q21 == "Yes, < 3 Units/day" 
+    if self.q21 == "Yes, but less than 2 bottles of wine or 8 pints a week" 
       risk = risk
     end
 
-    if self.q21 == "Yes, > 3 and < 6 Units/day" 
+    if self.q21 == "Yes, but more than 2 bottles of wine or 8 pints a week" 
       risk = risk
     end
 
-    if self.q19 == "Yes, > 6 Units/day" 
+    if self.q19 == "Yes, more than a bottle of wine or 4 pints most days" 
       risk = risk+4
     end
     #Q22 Drugs
