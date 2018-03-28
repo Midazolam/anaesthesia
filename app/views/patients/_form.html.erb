@@ -37,19 +37,19 @@
 
   <div class="form-group">
     <%= form.label :"Which hospital are you having the opperation in?" %>&nbsp &nbsp 
-    <%= form.select :hospital, ["","Beaumont", "Connelly", "St. Josephs", "Naas", "Limerick"], id: :patient_hospital %>
+    <%= form.select :hospital, ["","Limerick Regional", "St. Johns"], id: :patient_hospital %>
   </div>
   <hr>
 
   <div class="form-group">
-    <%= form.label :"What date are you having the opperation on?" %>&nbsp &nbsp 
+    <%= form.label :"What date are you having the opperation on? (If you don't know your opperation date, please select todays date." %>&nbsp &nbsp 
     <%= form.date_select :opDate, :start_year=>2017,:end_year=>2027, id: :patient_opDate %>
   </div>
   <hr>
 
   <div class="form-group">
     <%= form.label :"How would you rate your overall health" %><br>
-    <%= form.select :q1, ["","No abnormalities", "Better than expected", "Worse  than expected", "Dementia", "Sick", "Moribund"], id: :patient_q1 %>
+    <%= form.select :q1, ["","No abnormalities", "Could be better", "Not good", "I am diagnosed with dementia", "Very sick", "Bedbound at all times"], id: :patient_q1 %>
   </div>
   <hr>
 
@@ -72,44 +72,44 @@
   <hr>
 
   <div class="form-group">
-    <%= form.label :"Have you ever had a heart attack?" %><br>
-    <%= form.select :q5, ["","No", "Yes, > 12 months ago", "Yes, > 6 and < 12 months ago", "Yes, > 3 and < 6 months ago", "Yes, < 3 months ago"], id: :patient_q5 %>
+    <%= form.label :"Have you ever had a heart attack or a mini heart attack?" %><br>
+    <%= form.select :q5, ["","No", "Yes, longer than 12 months ago", "Yes, longer than 6 months ago", "Yes, longer than 3 months ago", "Yes, in the last 3 months"], id: :patient_q5 %>
   </div>
   <hr>
 
   <div class="form-group">
-    <%= form.label :"Have you ever had a cardiac arrest?" %><br>
-    <%= form.select :q6, ["","No", "Yes, > 12 months ago", "Yes, > 6 and < 12 months ago", "Yes, > 3 and < 6 months ago", "Yes, < 3 months ago"], id: :patient_q6 %>
+    <%= form.label :"Have you ever had a cardiac arrest? This is where your heart stops beating and you needed CPR" %><br>
+    <%= form.select :q6, ["","No", "Yes, longer than 12 months ago", "Yes, longer than 6 months ago", "Yes, longer than 3 months ago", "Yes, in the last 3 months"], id: :patient_q6 %>
   </div>
   <hr>
 
   <div class="form-group">
-    <%= form.label :"Have you ever undergone any cardiac surgery or heart catheterization?" %><br>
-    <%= form.select :q7, ["","No", "Yes, > 6 months ago", "Yes, > 3 and < 6 months ago", "Yes, > 6 weeks and < 3 months ago", "Yes, < 6 weeks ago"], id: :patient_q7 %>
+    <%= form.label :"Have you ever undergone any cardiac surgery or had an angiogram test done? (An angiogram is a test done by a cardiologist, where they place a wire in through the blood vessle at your wrist, and pass it up to your heart to look at the blood vessles.)" %><br>
+    <%= form.select :q7, ["","No", "Yes, longer than 12 months ago", "Yes, longer than 6 months ago", "Yes, longer than 3 months ago", "Yes, in the last 3 months"], id: :patient_q7 %>
   </div>
   <hr>
 
   <div class="form-group">
-    <%= form.label :"Do you ever get palpitations?" %><br>
-    <%= form.select :q8, ["","No", "Yes, I have no treatment", "Yes, I am treated with medication"], id: :patient_q8 %>
+    <%= form.label :"Do you ever get palpitations or a concerning fluttering sensation in your chest?" %><br>
+    <%= form.select :q8, ["","No", "Yes, and I do not take treatment for it", "Yes, and I take treatment for it"], id: :patient_q8 %>
   </div>
   <hr>
 
   <div class="form-group">
-    <%= form.label :"Have you been told you have a heart murmur?" %><br>
-    <%= form.select :q9, ["","No", "Yes, but no operation", "Yes, I have had an operation"], id: :patient_q9 %>
+    <%= form.label :"Have you been told you have a heart murmur? A heart murmur is a sound that a doctot hears when they listen with their stethescope. If you do not recall being told you have one, pick no." %><br>
+    <%= form.select :q9, ["","No", "Yes", "Yes, and I've had a procedure to fix it"], id: :patient_q9 %>
   </div>
   <hr>
 
   <div class="form-group">
     <%= form.label :"Do you have high blood pressure?" %><br>
-    <%= form.select :q10, ["","No", "I don't know", "Yes"], id: :patient_q10 %>
+    <%= form.select :q10, ["","No", "I don't know", "Yes/it's controlled on tablets",], id: :patient_q10 %>
   </div>
   <hr>
 
   <div class="form-group">
     <%= form.label :"Do you have high cholesterol?" %><br>
-    <%= form.select :q11, ["","No", "Yes"], id: :patient_q11 %>
+    <%= form.select :q11, ["","No", "Yes/it's controlled on tablets"], id: :patient_q11 %>
   </div>
   <hr>
 
@@ -121,55 +121,55 @@
 
   <div class="form-group">
     <%= form.label :"Have you ever had a stroke?" %><br>
-    <%= form.select :q13, ["","No", "Yes, but complete recovery", "Yes, with physical impairment/ disability", "Yes, < 2 months ago"], id: :patient_q13 %>
+    <%= form.select :q13, ["","No", "Yes, but I've completely recovered", "Yes, and I have not fully recovered", "Yes, in the last two months"], id: :patient_q13 %>
   </div>
   <hr>
 
   <div class="form-group">
     <%= form.label :"Do you receive treatment for asthma?" %><br>
-    <%= form.select :q14, ["","No", "Yes, sometimes", "Yes, often", "Yes, daily", "Yes, daily and increased over the last six months"], id: :patient_q14 %>
+    <%= form.select :q14, ["","No", "Yes, but I rarely need my inhailer", "Yes, I need my inhaler about once a week", "Yes, I need my inhaler every day", "Yes, I need my inhaler every day and it's been getting worse over the past 6 months"], id: :patient_q14 %>
   </div>
   <hr>
 
   <div class="form-group">
-    <%= form.label :"Do you receive treatment for pulmonary emphysema, chronic obstructive pulmonary disease (COPD) or chronic bronchitis?" %><br>
-    <%= form.select :q15, ["","No", "Yes, only during heavy labour", "Yes, always during climbing the stairs, in the wind, stress", "Yes, always even at rest, I need oxygen therapy"], id: :patient_q15 %>
+    <%= form.label :"Do you have difficulty with your breathing from smoking cigarettes, or do you have a diagnosis of COPD/bronchitis/emphysaema" %><br>
+    <%= form.select :q15, ["","No", "Yes, it affects me during heavy exercise", "Yes, it affects me when climbing the stairs, in the wind, during stress", "Yes, I'm breathless at rest or I need oxygen therapy at home"], id: :patient_q15 %>
   </div>
   <hr>
 
   <div class="form-group">
-    <%= form.label :"Do you have Sleep Apnoea?" %><br>
+    <%= form.label :"Do you have a diagnosis of Sleep Apnoea?" %><br>
     <%= form.select :q16, ["","No", "Yes"], id: :patient_q16 %>
   </div>
   <hr>
 
   <div class="form-group">
     <%= form.label :"Do you have any renal problems or kidney impairment?" %><br>
-    <%= form.select :q17, ["","No", "Yes, but with complete recovery", "Yes, treatment with fluid restriction only", "Yes, treatment with dialysis", "Yes, other serious kidney condition (e.g. kidney resection)"], id: :patient_q17 %>
+    <%= form.select :q17, ["","No", "Yes, I had a problem before but it has completely resolved (acute injury)", "Yes, my doctor has told me I must limit how much fluid I drink each day", "Yes, I am getting dialysis", "Yes, I have had a kidney transplant"], id: :patient_q17 %>
   </div>
   <hr>
 
   <div class="form-group">
     <%= form.label :"Have you ever had jaundice or any liver problems?" %><br>
-    <%= form.select :q18, ["","No", "Yes, but with complete recovery", "Yes, liver cirrhosis has been diagnosed", "Yes, other serious liver condition (e.g. partial resection)"], id: :patient_q18 %>
+    <%= form.select :q18, ["","No", "Yes, but with complete recovery", "Yes, liver cirrhosis has been diagnosed", "Yes, I've had a procedure done on my liver"], id: :patient_q18 %>
   </div>
   <hr>
 
   <div class="form-group">
-    <%= form.label :"Have you ever unintentionally lost more than 10 kg in a short period of time?" %><br>
+    <%= form.label :"Have you ever unintentionally lost more than 10 kg in a short period of time? If you were trying to lose weight through diet and exercise, please pick no." %><br>
     <%= form.select :q19, ["","No", "Yes", "Yes, more than 25% of previous bodyweight"], id: :patient_q19 %>
   </div>
   <hr>
 
   <div class="form-group">
     <%= form.label :"Do you smoke?" %><br>
-    <%= form.select :q20, ["","No", "Yes"], id: :patient_q20 %>
+    <%= form.select :q20, ["","No", "I've quit in the last five years", "Yes"], id: :patient_q20 %>
   </div>
   <hr>
 
   <div class="form-group">
     <%= form.label :"Do you consume alcohol?" %><br>
-    <%= form.select :q21, ["","No", "Yes, < 3 Units/day", "Yes, > 3 and < 6 Units/day", "Yes, > 6 Units/day"], id: :patient_q21 %>
+    <%= form.select :q21, ["","No", "Yes, one drink per day", "Yes, 2-3 drinks per day", "Yes, more than 3 drinks per day"], id: :patient_q21 %>
   </div>
   <hr>
 
